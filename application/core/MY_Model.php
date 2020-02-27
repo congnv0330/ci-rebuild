@@ -9,8 +9,6 @@ class MY_Model extends CI_Model
 	{
 		parent::__construct();
 
-		$this->load->library('api', [
-			'baseUrl' => $this->config->item('linkAPI')
-		]);
+		$this->load->library('api');
 	}
 }
