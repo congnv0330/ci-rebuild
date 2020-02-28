@@ -1,0 +1,10 @@
+#!/usr/bin/php -q
+<?php
+
+require_once 'vendor/autoload.php';
+
+if (file_exists('application/command/bootstrap.php')) {
+    require_once 'application/command/bootstrap.php';
+} else {
+    echo 'Missing ciscript cmd';
+}

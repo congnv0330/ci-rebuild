@@ -13,9 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 /*
-|
 | Enable Multi Language
-|
 */
 
 $hook['post_controller_constructor'] = array(
@@ -26,9 +24,7 @@ $hook['post_controller_constructor'] = array(
 );
 
 /*
-|
 | Enable Minify HTML using default codeigniter load view
-|
 */
 
 $hook['display_override'][] = array(

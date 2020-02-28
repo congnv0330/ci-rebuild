@@ -17,5 +17,10 @@
 	"require-dev": {
 		"mikey179/vfsstream": "^1.6",
 		"symfony/var-dumper": "^4.4"
+	},
+	"autoload":{
+		"psr-4":{
+		  	"Command\\Script\\":"application/command/"
+		}
 	}
 }
