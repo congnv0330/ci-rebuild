@@ -18,3 +18,8 @@ composer install --optimize-autoloader
 npm install
 ```
 
+## Using ciscript
+```
+php ciscript help
+```
+

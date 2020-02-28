@@ -52,7 +52,7 @@ if (isset($_SERVER["argv"][1])) {
 
 		}
 	} else {
-		echo "Command: php ci --action --name \n\n --action \nmake:controller \t Create controller \nmake:model \t\t Create model \nmake:helper \t\t Create helper \nmake:library \t\t Create library";
+		echo "Command: php ciscript --action --name \n\n --action \nmake:controller \t Create controller \nmake:model \t\t Create model \nmake:helper \t\t Create helper \nmake:library \t\t Create library";
 	}
 }
 
