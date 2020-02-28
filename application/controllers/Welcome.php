@@ -5,6 +5,6 @@ class Welcome extends MY_Controller
 {
 	public function index()
 	{
-		$this->blade->view('index');
+		$this->load->view('index');
 	}
 }

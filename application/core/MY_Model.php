@@ -9,6 +9,9 @@ class MY_Model extends CI_Model
 	{
 		parent::__construct();
 
+		/**
+		 *  load Api library if using third api
+		 */
 		$this->load->library('api');
 	}
 }

@@ -12,6 +12,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
+/*
+|
+| Enable Multi Language
+|
+*/
+
 $hook['post_controller_constructor'] = array(
 	'class' => 'LanguageLoader',
 	'function' => 'initialize',
@@ -25,9 +31,9 @@ $hook['post_controller_constructor'] = array(
 |
 */
 
-//$hook['display_override'][] = array(
-//	'class' => '',
-//	'function' => 'compress',
-//	'filename' => 'Compress.php',
-//	'filepath' => 'hooks'
-//);
+$hook['display_override'][] = array(
+	'class' => '',
+	'function' => 'compress',
+	'filename' => 'Compress.php',
+	'filepath' => 'hooks'
+);
