@@ -9,21 +9,10 @@ use GuzzleHttp\Exception\ConnectException;
 class Api
 {
 	protected $ci;
-	protected $client;
 
 	public function __construct()
 	{
 		$this->ci =& get_instance();
-
-		$header = array();
-		if ($this->ci->session->has_userdata('token')) {
-			$header['x-access-token'] = $this->ci->session->userdata('token');
-		}
-
-		$this->client = new Client([
-			'base_uri' => $this->ci->config->item('linkAPI'),
-			'header' => $header
-		]);
 	}
 
 	public function get($uri, $params = array())
@@ -39,7 +28,17 @@ class Api
 	public function request($method, $uri, $params = array())
 	{
 		try {
-			$response = $this->client->request($method, $uri, $params);
+			$headers['Content-Type'] = 'application/json';
+			if ($this->ci->session->has_userdata('token')) {
+				$headers['x-access-token'] = $this->ci->session->userdata('token');
+			}
+
+			$client = new Client([
+				'base_uri' => $this->ci->config->item('linkAPI'),
+				'headers' => $headers
+			]);
+
+			$response = $client->request($method, $uri, $params);
 			return $this->handleResponse(json_decode($response->getBody(), 1));
 		} catch (ConnectException $e) {
 			return $this->handleResponse(['exitcode' => 500]);
@@ -48,13 +47,13 @@ class Api
 
 	protected function handleResponse($response)
 	{
-		if (isset($response['exitcode'])) {
+		if (isset($response['exitcode']) && $response['exitcode'] !== 1) {
 			return [
 				'error' => true,
 				'message' => $this->ci->lang->line('exitcode_' . $response['exitcode'])
 			];
 		}
 
-		return $response;
+		return $response['data'];
 	}
 }

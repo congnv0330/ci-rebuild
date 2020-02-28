@@ -53,12 +53,12 @@ class Blade
 		)  # If we made it here, we are not in a blacklist tag.
 		%Six';
 
-		$new_buffer = preg_replace($re, " ", $buffer);
+		$buffer = preg_replace($re, " ", $buffer);
 
-		if ($new_buffer === null) {
-			$new_buffer = $buffer;
+		if ($buffer === null) {
+			$buffer = $buffer;
 		}
 
-		echo $new_buffer;
+		echo $buffer;
 	}
 }
