@@ -18,10 +18,10 @@ composer install
 composer install --optimize-autoloader
 ```
 ## Using Laravel-mix
+- [Doc](https://laravel.com/docs/6.x/mix)
 ```
 npm install
 ```
-
 ## Using ciscript
 ```
 php ciscript help
