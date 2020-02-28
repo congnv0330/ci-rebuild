@@ -53,7 +53,7 @@ $config['env'] = $env;
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -495,7 +495,7 @@ $config['csrf_exclude_uris'] = array();
 | VERT IMPORTANT: If using blade template, compress_output must false
 |
 */
-$config['compress_output'] = true;
+$config['compress_output'] = false;
 
 /*
 |--------------------------------------------------------------------------
