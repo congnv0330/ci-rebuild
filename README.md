@@ -1,5 +1,9 @@
-# ci-rebuild
+# CI-Rebuild
 Custom Codeigniter Framework
+
+Package using:
+- [Guzzle, PHP HTTP client](https://github.com/guzzle/guzzle)
+- [Blade Template](https://github.com/jenssegers/blade)
 
 ## Required
 - composer
