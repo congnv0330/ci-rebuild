@@ -1,5 +1,5 @@
 <?php
-if ( ! defined('BASEPATH')) {
+if (!defined('BASEPATH')) {
 	exit('No direct script access allowed');
 }
 
@@ -26,6 +26,16 @@ class Api
 		]);
 	}
 
+	public function get($uri, $params = array())
+	{
+		return $this->request('GET', $uri, $params);
+	}
+
+	public function post($uri, $params = array())
+	{
+		return $this->request('POST', $uri, $params);
+	}
+
 	public function request($method, $uri, $params = array())
 	{
 		try {
@@ -41,11 +51,10 @@ class Api
 		if (isset($response['exitcode'])) {
 			return [
 				'error' => true,
-				'message' => $this->ci->lang->line('exitcode_'.$response['exitcode'])
+				'message' => $this->ci->lang->line('exitcode_' . $response['exitcode'])
 			];
 		}
 
 		return $response;
 	}
-
 }

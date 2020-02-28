@@ -139,7 +139,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FCPATH.'vendor/autoload.php';
+$config['composer_autoload'] = FCPATH . 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -477,8 +477,10 @@ $config['csrf_exclude_uris'] = array();
 | compression to work, nothing can be sent before the output buffer is called
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
+| VERT IMPORTANT: If using blade template, compress_output must false
+|
 */
-$config['compress_output'] = true;
+$config['compress_output'] = false;
 
 /*
 |--------------------------------------------------------------------------

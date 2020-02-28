@@ -5,10 +5,9 @@ if (!defined('BASEPATH')) {
 
 class User_model extends MY_Model
 {
+	/**
+	 * Table name
+	 * @var string
+	 */
 	protected $table = '';
-
-	public function test()
-	{
-		return $this->api->request('get', 'api/province/01/getAllDistrict');
-	}
 }

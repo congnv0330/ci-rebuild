@@ -13,8 +13,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $hook['post_controller_constructor'] = array(
-	'class'    => 'LanguageLoader',
+	'class' => 'LanguageLoader',
 	'function' => 'initialize',
 	'filename' => 'LanguageLoader.php',
 	'filepath' => 'hooks'
 );
+
+/*
+|
+| Enable Minify HTML using default codeigniter load view
+|
+*/
+
+//$hook['display_override'][] = array(
+//	'class' => '',
+//	'function' => 'compress',
+//	'filename' => 'Compress.php',
+//	'filepath' => 'hooks'
+//);
