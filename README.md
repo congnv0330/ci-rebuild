@@ -13,4 +13,8 @@ composer install
 ```
 composer install --optimize-autoloader
 ```
+## Using Laravel-mix
+```
+npm install
+```
 
