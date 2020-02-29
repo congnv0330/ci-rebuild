@@ -51,8 +51,24 @@ if (isset($_SERVER["argv"][1])) {
 				die();
 
 		}
+	} elseif ($_SERVER["argv"][1] === 'serve') {
+		$port = 8001;
+		
+		if (!empty($_SERVER['argv'][2])) {
+			if (is_numeric($_SERVER['argv'][2])) {
+				$port = $_SERVER['argv'][2];
+			} else {
+				echo "Cutstom port is invalid";
+				die();
+			}
+		}
+
+		echo 'PHP version ' . phpversion() . "\n";
+		echo "Listening on http://localhost:" . $port . "\n";
+		echo "Press Ctrl-C to quit.\n";
+		echo shell_exec('php -S localhost:' . $port . ' -t public/');
 	} else {
-		echo "Command: php ciscript --action --name \n\n --action \nmake:controller \t Create controller \nmake:model \t\t Create model \nmake:helper \t\t Create helper \nmake:library \t\t Create library";
+		echo "To run server: php ciscript serve {custom port} \n- Default port is 8001 \nTo create file: php ciscript make:{module} {module name} \n- make:controller \t Create controller \n- make:model \t\t Create model \n- make:helper \t\t Create helper \n- make:library \t\t Create library";
 	}
 }
 

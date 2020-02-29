@@ -23,7 +23,6 @@ class Blade
 			mkdir($cache, 0755);
 		}
 
-		$this->ci =& get_instance();
 		$this->blade = new BladeTemplate($path, $cache);
 	}
 
@@ -39,7 +38,7 @@ class Blade
 
 		$buffer = $this->blade->make($view, $data)->render();
 
-		if ($this->ci->config->item('env') === 'production') {
+		if (getenv('APP_ENV') === 'production') {
 			$re = '%# Collapse whitespace everywhere but in blacklisted elements.
 			(?>             # Match all whitespans other than single space.
 			  [^\S ]\s*     # Either one [\t\r\n\f\v] and zero or more ws,

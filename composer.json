@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"guzzlehttp/guzzle": "^6.5",
-		"jenssegers/blade": "^1.2"
+		"jenssegers/blade": "^1.2",
+		"vlucas/phpdotenv": "^4.1"
     },
 	"require-dev": {
 		"mikey179/vfsstream": "^1.6",

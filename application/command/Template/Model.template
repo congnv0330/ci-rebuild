@@ -3,5 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class {$name} extends MY_Model
 {
+	/**
+	 * Table name
+	 * @var string
+	 */
+	protected $table = '';
+
     //code
 }

@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-include_once 'variable.php';
-
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -25,7 +23,7 @@ include_once 'variable.php';
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = $baseUrl;
+$config['base_url'] = getenv('APP_BASE_URL');
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +31,7 @@ $config['base_url'] = $baseUrl;
 |--------------------------------------------------------------------------
 |
  */
-$config['linkAPI'] = $linkAPI;
+$config['linkAPI'] = getenv('APP_API_URL');
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +39,7 @@ $config['linkAPI'] = $linkAPI;
 |--------------------------------------------------------------------------
 |
  */
-$config['env'] = $env;
+$config['env'] = getenv('APP_ENV');
 
 /*
 |--------------------------------------------------------------------------
@@ -154,7 +152,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FCPATH . 'vendor/autoload.php';
+$config['composer_autoload'] =  FCPATH . 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------

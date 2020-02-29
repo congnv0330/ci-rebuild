@@ -7,19 +7,16 @@ if (!function_exists('mix')) {
 	 * Get the path to a versioned Mix file.
 	 *
 	 * @param string $path
-	 * @param string $manifestDirectory
 	 * @return string
 	 *
 	 * @throws \Exception
 	 */
-	function mix($path, $manifestDirectory = 'public')
+	function mix($path)
 	{
-		$CI =& get_instance();
-
 		static $manifest;
 
 		if (!$manifest) {
-			if (!file_exists($manifestPath = (FCPATH . $manifestDirectory . '/mix-manifest.json'))) {
+			if (!file_exists($manifestPath = (FCPATH . 'public/mix-manifest.json'))) {
 				throw new Exception('The Mix manifest does not exist.');
 			}
 			$manifest = json_decode(file_get_contents($manifestPath), true);
@@ -34,6 +31,6 @@ if (!function_exists('mix')) {
 			);
 		}
 
-		return $CI->config->item('base_url') . $manifestDirectory . $manifest[$path];
+		return $manifest[$path];
 	}
 }

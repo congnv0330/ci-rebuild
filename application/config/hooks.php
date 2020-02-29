@@ -12,6 +12,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
+$hook['pre_system'] = function() {
+	$dotenv = Dotenv\Dotenv::createImmutable(FCPATH);
+	$dotenv->load();
+};
+
+
 /*
 | Enable Multi Language
 */

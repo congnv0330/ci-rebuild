@@ -6,7 +6,7 @@ function compress()
 
 	$CI =& get_instance();
 
-	if ($CI->config->item('env') === 'production') {
+	if (getenv('APP_ENV') === 'production') {
 
 		$buffer = $CI->output->get_output();
 
