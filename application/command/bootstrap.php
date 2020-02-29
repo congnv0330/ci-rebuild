@@ -53,7 +53,7 @@ if (isset($_SERVER["argv"][1])) {
 		}
 	} elseif ($_SERVER["argv"][1] === 'serve') {
 		$port = 8001;
-		
+
 		if (!empty($_SERVER['argv'][2])) {
 			if (is_numeric($_SERVER['argv'][2])) {
 				$port = $_SERVER['argv'][2];

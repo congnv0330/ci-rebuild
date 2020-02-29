@@ -31,6 +31,13 @@ if (!function_exists('mix')) {
 			);
 		}
 
-		return $manifest[$path];
+		return base_url($manifest[$path]);
+	}
+}
+
+if (!function_exists('base_url')) {
+	function base_url($path = '')
+	{
+		return $this->config->item('base_url') . $path;
 	}
 }
