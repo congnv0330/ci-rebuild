@@ -6,7 +6,7 @@ function compress()
 
 	$CI =& get_instance();
 
-	if (getenv('APP_ENV') === 'production') {
+	if (getenv('APP_HTML_COMPRESS') === 'true') {
 
 		$buffer = $CI->output->get_output();
 

@@ -38,7 +38,7 @@ class Blade
 
 		$buffer = $this->blade->make($view, $data)->render();
 
-		if (getenv('APP_ENV') === 'production') {
+		if (getenv('APP_HTML_COMPRESS') === 'true') {
 			$re = '%# Collapse whitespace everywhere but in blacklisted elements.
 			(?>             # Match all whitespans other than single space.
 			  [^\S ]\s*     # Either one [\t\r\n\f\v] and zero or more ws,
