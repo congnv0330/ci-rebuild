@@ -4,16 +4,21 @@ Custom Codeigniter Framework
 Package using:
 - [Guzzle, PHP HTTP client](https://github.com/guzzle/guzzle)
 - [Blade Template](https://github.com/jenssegers/blade)
+- [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 
 ## Required
 - composer
 
 ## Start
-- develop
+- Create .env for project
+```
+Just copy .env.example rename to .env
+```
+- In local
 ```
 composer install
 ```
-- production
+- In production
 ```
 composer install --optimize-autoloader
 ```
