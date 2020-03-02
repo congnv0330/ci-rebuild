@@ -31,9 +31,10 @@ npm install
 ```
 php ciscript help
 ```
-## Using
+## Using Blade
 Default Blade template isn't auto load, add blade to libraries if using blade
 ```
 $autoload['libraries'] = array('session', 'blade');
 ```
+Create blade view in resources/views
 

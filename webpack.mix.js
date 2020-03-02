@@ -11,10 +11,18 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.disableNotifications();
 mix.setPublicPath('public');
 
 mix.js('resources/js/app.js', 'public/js')
 	.sass('resources/sass/app.scss', 'public/css')
+	.options({
+	postCss: [
+		require('autoprefixer')({
+			grid: true
+		})
+	]
+});
 
 if (mix.inProduction()) {
 	mix.version()
