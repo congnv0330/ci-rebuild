@@ -34,7 +34,7 @@ class Api
 			}
 
 			$client = new Client([
-				'base_uri' => $this->ci->config->item('linkAPI'),
+				'base_uri' => getenv('APP_API_URL'),
 				'headers' => $headers
 			]);
 

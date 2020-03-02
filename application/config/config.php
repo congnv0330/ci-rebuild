@@ -25,11 +25,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $protocol = 'http://';
-
 if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
 	$protocol = 'https://';
 }
-
 $root = $protocol . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 
 $config['base_url'] = $root;
@@ -37,26 +35,10 @@ $config['base_url'] = $root;
 /*
 |--------------------------------------------------------------------------
 | Or you can custom base_url
-| //$config['base_url'] = getenv('APP_BASE_URL');
+| //$config['base_url'] = 'your_base_url';
 |--------------------------------------------------------------------------
 |
  */
-
-/*
-|--------------------------------------------------------------------------
-| Api URL
-|--------------------------------------------------------------------------
-|
- */
-$config['linkAPI'] = getenv('APP_API_URL');
-
-/*
-|--------------------------------------------------------------------------
-| Environment (production, development)
-|--------------------------------------------------------------------------
-|
- */
-$config['env'] = getenv('APP_ENV');
 
 /*
 |--------------------------------------------------------------------------
