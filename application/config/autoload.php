@@ -89,7 +89,12 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'dev', 'general');
+$helpers = array('url', 'general');
+if(getenv('APP_ENV') !== 'production') {
+	array_push($helpers, 'dev');
+}
+
+$autoload['helper'] = $helpers;
 
 /*
 | -------------------------------------------------------------------
