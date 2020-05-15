@@ -80,7 +80,6 @@ class Handler implements HandlerInterface
 
 		if (strpbrk('/', $data) !== false) {
 			$folder = $this->getFolder($data);
-
 			$this->createFolder($folder);
 		}
 
